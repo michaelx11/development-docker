@@ -8,7 +8,8 @@ RUN apt-get update && apt-get install -y \
     python-software-properties \
     software-properties-common \
     tmux \
-    vim
+    vim \
+    wget
 
 # Install haskell stack
 RUN curl -sSL https://get.haskellstack.org/ | sh
