@@ -10,7 +10,8 @@ RUN apt-get update && apt-get install -y \
     software-properties-common \
     tmux \
     vim \
-    wget
+    wget \
+    zsh
 
 # Install haskell stack
 RUN curl -sSL https://get.haskellstack.org/ | sh
@@ -23,4 +24,7 @@ RUN add-apt-repository ppa:ubuntu-lxc/lxd-stable && apt-get update \
 WORKDIR /root/
 
 # Copy .vimrc
-COPY .vimrc 
+COPY .vimrc ./
+
+# Install zsh
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
