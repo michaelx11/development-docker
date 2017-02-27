@@ -26,5 +26,5 @@ WORKDIR /root/
 # Copy .vimrc
 COPY .vimrc ./
 
-# Install zsh
-RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# Install zsh, long-winded command to handle the non-zero exit code
+RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
