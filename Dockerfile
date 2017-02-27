@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM google/cloud-sdk
 
 MAINTAINER Michael Xu
 
